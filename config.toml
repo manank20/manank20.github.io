@@ -36,6 +36,11 @@ navbar_items = [
 ] },
 ]
 
+[extra.analytics]
+google = "G-0083EZQFRX"
+
+[extra.commenting]
+disqus = "manank"
 
 [extra.favicon]
 favicon_16x16 = "/icons/favicon-16x16.png"
@@ -49,7 +54,7 @@ name="Manank Patel"
 avatar="/images/avatar.png"
 
 [extra.social]
-email="manank@gmx.com"
+email="manank@manank.com"
 linkedin="manank20"
 github="manank20"
 gitlab="manank20"
