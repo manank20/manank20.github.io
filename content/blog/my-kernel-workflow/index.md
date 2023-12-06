@@ -3,6 +3,7 @@ title = "My kernel testing workflow"
 description = "Setting up a minimal qemu vm for testing new kernel after compilation"
 date = 2023-03-01T01:03:44+05:30
 authors = ["Manank"]
+draft = true
 
 [taxonomies]
 categories = ["Guide"]
