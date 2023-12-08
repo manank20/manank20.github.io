@@ -21,7 +21,7 @@ sentiment(yes, it is Dijkstra!), and the opposing views and the rationality behi
 A "goto" statement is like a magical teleporter in computer programming. It lets the computer jump from one part of a program to another without any conditions or questions. Imagine it's like a super-fast shortcut that programmers can use to change the usual order of instructions. It's beautiful. In assembly language, it is a single jump instruction.
 
 <center>
-  <img src="http://www.programiz.com/sites/tutorial2program/files/working-goto.jpg" alt="goto"/>
+  <img src="/images/goto.png" width=500 alt="goto"/>
 </center>
 
 ### Motivation
@@ -34,9 +34,13 @@ decided to dig deeper and find out more about this debate.
 ### Dijkstra's Thoughts
 Dijkstra published a relatively strong article against the use of goto in The Communications of the ACM 11, 3 (March 1968), [Go To Statement Considered Harmful](dij.pdf).
 
+<center>
+  <img src="/images/Edsger_Dijkstra.jpg" width=200 alt="goto"/>
+</center>
+
 > Edsger Dijkstra was a Dutch computer scientist who made significant contributions to the fields of algorithms, programming, and software engineering. His work on the Dijkstra algorithm, structured programming, and formal methods has had a lasting impact on the field. 
 
-> Fun fact about the Title: The editor was the one who came up with it, dijkstra was not asked for approval!
+> Fun fact about the Title: The original title of the article was [EWD 215: A Case against the GO TO Statement](https://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.PDF). XYZ considered harmful was a common title during that time, and thus it was published with the current title. 
 
 The majority of the opposition to the goto construct among students, professors, and other programmers comes from this paper. Which is valid as long as you
 have read the entire article. The majority of people today will agree that they should avoid gotos at all costs, but hardly a few will be able to answer
@@ -71,6 +75,10 @@ exit principle, and thus discourages the usage of goto, which would break the pr
 There have been a few responses to the article in the form of publications and many debates and arguments in various online forums.
 The most widely studied and sought-after response is by none other than [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth).
 
+
+<center>
+  <img src="/images/knuth.jpg" width=300 alt="goto"/>
+</center>
 
 > Donald Knuth, a towering figure in computer science, is renowned for his seminal work on algorithms, his revolutionary TeX typesetting system, and his influential multi-volume series "The Art of Computer Programming." A Turing Award winner, Knuth's meticulousness and passion for clarity have shaped modern computing, making him a legend in the field.
 
