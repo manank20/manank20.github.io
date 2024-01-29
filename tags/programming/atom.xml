@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Manank&#x27;s blog - Programming</title>
+    <link href="https://www.manank.in/tags/programming/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://www.manank.in"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-12-06T23:30:20+05:30</updated>
+    <id>https://www.manank.in/tags/programming/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The &quot;goto&quot; statement</title>
+        <published>2023-12-06T23:30:20+05:30</published>
+        <updated>2023-12-06T23:30:20+05:30</updated>
+        <author>
+          <name>Manank</name>
+        </author>
+        <link rel="alternate" href="https://www.manank.in/blog/goto-statement/" type="text/html"/>
+        <id>https://www.manank.in/blog/goto-statement/</id>
+        <content type="html">&lt;p&gt;The goto statement has been controversial since the advent of programming languages. In this blog post, we will deep dive into the history and the origin of the
+sentiment(yes, it is Dijkstra!), and the opposing views and the rationality behind both.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h3&gt;
+&lt;p&gt;A &amp;quot;goto&amp;quot; statement is like a magical teleporter in computer programming. It lets the computer jump from one part of a program to another without any conditions or questions. Imagine it&#x27;s like a super-fast shortcut that programmers can use to change the usual order of instructions. It&#x27;s beautiful. In assembly language, it is a single jump instruction.&lt;&#x2F;p&gt;
+&lt;center&gt;
+  &lt;img src=&quot;&#x2F;images&#x2F;goto.png&quot; width=500 alt=&quot;goto&quot;&#x2F;&gt;
+&lt;&#x2F;center&gt;
+&lt;h3 id=&quot;motivation&quot;&gt;Motivation&lt;&#x2F;h3&gt;
+&lt;p&gt;So we had a course called Computer Networks, and as a part of that, we had a few labs and assignments. One day, I was writing code(in C), and my friend 
+came into my room, stared at my screen, and then said, &amp;quot;Bruh, you are using goto?! Don&#x27;t use it; it&#x27;s not good.&amp;quot;. I asked him why, and he gave various good 
+reasons for it, which we will discuss further, but still, I was not convinced because where I had used goto, it made a lot of sense, and I had seen 
+a lot of gotos in the Linux kernel code. As far as I remember, I had used it to break out of a triple loop and resource cleaning in case of error. So, I 
+decided to dig deeper and find out more about this debate.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dijkstra-s-thoughts&quot;&gt;Dijkstra&#x27;s Thoughts&lt;&#x2F;h3&gt;
+&lt;p&gt;Dijkstra published a relatively strong article against the use of goto in The Communications of the ACM 11, 3 (March 1968), &lt;a href=&quot;https:&#x2F;&#x2F;www.manank.in&#x2F;blog&#x2F;goto-statement&#x2F;dij.pdf&quot;&gt;Go To Statement Considered Harmful&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;center&gt;
+  &lt;img src=&quot;&#x2F;images&#x2F;Edsger_Dijkstra.jpg&quot; width=200 alt=&quot;goto&quot;&#x2F;&gt;
+&lt;&#x2F;center&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Edsger Dijkstra was a Dutch computer scientist who made significant contributions to the fields of algorithms, programming, and software engineering. His work on the Dijkstra algorithm, structured programming, and formal methods has had a lasting impact on the field. &lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Fun fact about the Title: The original title of the article was &lt;a href=&quot;https:&#x2F;&#x2F;www.cs.utexas.edu&#x2F;users&#x2F;EWD&#x2F;ewd02xx&#x2F;EWD215.PDF&quot;&gt;EWD 215: A Case against the GO TO Statement&lt;&#x2F;a&gt;. XYZ considered harmful was a common title during that time, and thus it was published with the current title. &lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The majority of the opposition to the goto construct among students, professors, and other programmers comes from this paper. Which is valid as long as you
+have read the entire article. The majority of people today will agree that they should avoid gotos at all costs, but hardly a few will be able to answer
+that &amp;quot;why&amp;quot; should you do that. There is also a famous quote at the beginning of the article that goes like this:-&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The quality of programmers is a decreasing function of the density of goto statements in the programs they produce.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;A powerful statement to make; he goes on to say that he is convinced that the goto statement should be abolished from all &amp;quot;higher level&amp;quot; programming
+languages. Keep in mind that at the time of publication, C did not even exist.
+One of the points that Dijkstra focused on was about the structure of the program. He argued that the extensive use of gotos in a program makes it harder
+for the reader to understand and maintain. Imagine a function spanning 1000 lines and a goto statement from, say, line 200 down to 800 and many other
+similar jumps; it&#x27;s very easy to get confused and lose track of all the branching, which is the result of several goto statements.&lt;&#x2F;p&gt;
+&lt;p&gt;The main motive of Dijkstra seems to encourage the use of a structured programming paradigm.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;structured-programming&quot;&gt;Structured Programming&lt;&#x2F;h4&gt;
+&lt;p&gt;According to Dijkstra&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;www.manank.in&#x2F;blog&#x2F;goto-statement&#x2F;notes-on-structured.pdf&quot;&gt;Notes on Structured Programming&lt;&#x2F;a&gt;, He defines structured programming as a method of writing programs that uses a limited set of control structures. He argues that this approach makes programs easier to understand, maintain, and modify. He identifies three basic control structures: sequence, selection, and iteration. He also discusses the importance of using recursion and data abstraction.&lt;&#x2F;p&gt;
+&lt;p&gt;Specifically, Dijkstra argues that structured programming can help to avoid the &amp;quot;spaghetti code&amp;quot; problem, in which programs become difficult to
+understand and maintain due to their complex and tangled structure. He suggests that by using a limited set of control structures, programmers can make 
+their programs more modular and easier to reason about.&lt;&#x2F;p&gt;
+&lt;p&gt;Dijkstra also discusses the importance of using recursion and data abstraction in structured programming. Recursion is a technique in which a function 
+calls itself. This can be a powerful tool for writing concise and elegant programs. Data abstraction is the process of hiding the implementation details 
+of a data structure or algorithm. This can make programs easier to understand and maintain, as programmers can focus on the functionality of the program 
+without having to worry about the underlying details.&lt;&#x2F;p&gt;
+&lt;p&gt;So basically, structured programming aims to make the structure of the program easier to read and less confusing by following a single entry, single 
+exit principle, and thus discourages the usage of goto, which would break the principle.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;responses-to-the-article&quot;&gt;Responses to the Article&lt;&#x2F;h3&gt;
+&lt;p&gt;There have been a few responses to the article in the form of publications and many debates and arguments in various online forums.
+The most widely studied and sought-after response is by none other than &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Donald_Knuth&quot;&gt;Donald Knuth&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;center&gt;
+  &lt;img src=&quot;&#x2F;images&#x2F;knuth.jpg&quot; width=300 alt=&quot;goto&quot;&#x2F;&gt;
+&lt;&#x2F;center&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Donald Knuth, a towering figure in computer science, is renowned for his seminal work on algorithms, his revolutionary TeX typesetting system, and his influential multi-volume series &amp;quot;The Art of Computer Programming.&amp;quot; A Turing Award winner, Knuth&#x27;s meticulousness and passion for clarity have shaped modern computing, making him a legend in the field.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h4 id=&quot;structured-programming-with-goto-statements-by-donald-e-knuth&quot;&gt;Structured Programming with GOTO statements by Donald E. Knuth&lt;&#x2F;h4&gt;
+&lt;p&gt;Knuth did defend the judicious usage of goto in &lt;a href=&quot;https:&#x2F;&#x2F;www.manank.in&#x2F;blog&#x2F;goto-statement&#x2F;knuth-GOTO.pdf&quot;&gt;Structured Programming with GOTO&lt;&#x2F;a&gt;. I suggest you give it a read. He argued that 
+there are cases where the &amp;quot;goto&amp;quot; statement can enhance code expressiveness. He gave 
+examples of situations where using &amp;quot;goto&amp;quot; could lead to more concise and efficient code. He also contended that in some instances, using &amp;quot;goto&amp;quot; could 
+lead to more explicit and more efficient code, particularly in situations involving error handling and resource cleanup, which is a common pattern in kernel
+code. &lt;&#x2F;p&gt;
+&lt;h4 id=&quot;examples&quot;&gt;Examples&lt;&#x2F;h4&gt;
+&lt;p&gt;Here are a few examples from a &lt;a href=&quot;https:&#x2F;&#x2F;softwareengineering.stackexchange.com&#x2F;questions&#x2F;154974&#x2F;is-this-a-decent-use-case-for-goto-in-c&#x2F;154980#154980&quot;&gt;stackoverflow thread&lt;&#x2F;a&gt;
+The OP posted the following code, which is the case when we try to avoid gotos; it becomes a mess if there are multiple
+functions that could fail and could lead to 5-6 levels of indentation.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;c&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-c &quot;&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span&gt;error = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;function_that_could_fail_1&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(!error) {
+&lt;&#x2F;span&gt;&lt;span&gt;    error = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;function_that_could_fail_2&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(!error) {
+&lt;&#x2F;span&gt;&lt;span&gt;        error = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;function_that_could_fail_3&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt;(!error) {
+&lt;&#x2F;span&gt;&lt;span&gt;          error = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;function_that_could_fail_4&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt;(!error){
+&lt;&#x2F;span&gt;&lt;span&gt;              ...to the n-th tab level!
+&lt;&#x2F;span&gt;&lt;span&gt;          } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; deal with error, clean up, and return error code
+&lt;&#x2F;span&gt;&lt;span&gt;          }
+&lt;&#x2F;span&gt;&lt;span&gt;        } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; deal with error, clean up, and return error code
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;    } &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; deal with error, clean up, and return error code
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;} &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;else &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; deal with error, clean up, and return error code
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;But if we decide to use goto, the solution is much more simple, elegant, and readable&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;c&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-c &quot;&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span&gt;error = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;function_that_could_fail_1&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt;(error) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; cleanup;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;error = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;function_that_could_fail_2&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt;(error) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; cleanup;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;error = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;function_that_could_fail_3&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt;(error) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; cleanup;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;...
+&lt;&#x2F;span&gt;&lt;span&gt;cleanup:
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; deal with error if it exists, clean up
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; return error code
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;another similar snippet&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;c&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-c &quot;&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;frobnicateTheThings&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;char &lt;&#x2F;span&gt;&lt;span&gt;*workingBuffer = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;malloc&lt;&#x2F;span&gt;&lt;span&gt;(...);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; i;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;(i=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span&gt;; i&amp;lt;numberOfThings ; i++) {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;giveMeThing&lt;&#x2F;span&gt;&lt;span&gt;(i, workingBuffer) != OK)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; error;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;processing&lt;&#x2F;span&gt;&lt;span&gt;(workingBuffer) != OK)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; error;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;dispatching&lt;&#x2F;span&gt;&lt;span&gt;(i, workingBuffer) != OK)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; error;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;free&lt;&#x2F;span&gt;&lt;span&gt;(workingBuffer);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; OK;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  error:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;free&lt;&#x2F;span&gt;&lt;span&gt;(workingBuffer);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; OOPS;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This is one of the examples where using goto makes the code more readable. &lt;code&gt;goto&lt;&#x2F;code&gt;s become confusing when the
+jumps are bi-directional, but using one-way jumps in situations like this can improve the overall readability
+and encourage code reuse. The same code without the use of goto would look like this:-&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;c&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-c &quot;&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;frobnicateTheThings&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;char &lt;&#x2F;span&gt;&lt;span&gt;*workingBuffer = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;malloc&lt;&#x2F;span&gt;&lt;span&gt;(...);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; i;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;(i=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span&gt;; i&amp;lt;numberOfThings ; i++) {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;giveMeThing&lt;&#x2F;span&gt;&lt;span&gt;(i, workingBuffer) != OK){
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;free&lt;&#x2F;span&gt;&lt;span&gt;(workingBuffer);
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; OOPS;
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;processing&lt;&#x2F;span&gt;&lt;span&gt;(workingBuffer) != OK){
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;free&lt;&#x2F;span&gt;&lt;span&gt;(workingBuffer);
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; OOPS;
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;dispatching&lt;&#x2F;span&gt;&lt;span&gt;(i, workingBuffer) != OK){
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;free&lt;&#x2F;span&gt;&lt;span&gt;(workingBuffer);
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; OOPS;
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;free&lt;&#x2F;span&gt;&lt;span&gt;(workingBuffer);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; OK;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Another argument for the use of goto statements might be performance, as explained in this &lt;a href=&quot;https:&#x2F;&#x2F;lkml.org&#x2F;lkml&#x2F;2003&#x2F;1&#x2F;12&#x2F;203&quot;&gt;20-year-old thread on Linux kernel mailing list&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Subject Re: any chance of 2.6.0-test*? &lt;&#x2F;br&gt;
+From: Robert Love &lt;&#x2F;br&gt;
+Date: 12 Jan 2003 17:58:06 -0500 &lt;&#x2F;br&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;On Sun, 2003-01-12 at 17:22, Rob Wilkens wrote:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I say &amp;quot;please don&#x27;t use goto&amp;quot; and instead have a &amp;quot;cleanup_lock&amp;quot; function
+and add that before all the return statements..  It should not be a
+burden.  Yes, it&#x27;s asking the developer to work a little harder, but the
+end result is better code.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;No, it is gross and it bloats the kernel.  It inlines a bunch of junk
+for N error paths, as opposed to having the exit code once at the end. 
+Cache footprint is key, and you just killed it.&lt;&#x2F;p&gt;
+&lt;p&gt;Nor is it easier to read.&lt;&#x2F;p&gt;
+&lt;p&gt;As a final argument, it does not let us cleanly do the usual stack-esque
+wind and unwind, i.e.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;c&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-c &quot;&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;do&lt;&#x2F;span&gt;&lt;span&gt; A
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(error)
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; out_a;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;do&lt;&#x2F;span&gt;&lt;span&gt; B
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(error)
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; out_b;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;do&lt;&#x2F;span&gt;&lt;span&gt; C
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(error)
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; out_c;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;goto&lt;&#x2F;span&gt;&lt;span&gt; out;
+&lt;&#x2F;span&gt;&lt;span&gt;out_c:
+&lt;&#x2F;span&gt;&lt;span&gt;undo C
+&lt;&#x2F;span&gt;&lt;span&gt;out_b:
+&lt;&#x2F;span&gt;&lt;span&gt;undo B:
+&lt;&#x2F;span&gt;&lt;span&gt;out_a:
+&lt;&#x2F;span&gt;&lt;span&gt;undo A
+&lt;&#x2F;span&gt;&lt;span&gt;out:
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; ret;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now stop this.&lt;&#x2F;p&gt;
+&lt;p&gt;Robert Love&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;That being said, it is very tempting to use gotos when it is not required and create spaghetti code; thus programmers
+should really know what they are doing when they decide to use goto.&lt;&#x2F;p&gt;
+&lt;p&gt;A lot of times, the usage of break and continue in C might also need to be clarified, as it is difficult to predict the flow in case
+of multiple nested loops with multiple conditions. Also, the capabilities of break and continue are limited, such that
+breaking out from multiple nested loops is impossible to do without &lt;code&gt;goto&lt;&#x2F;code&gt;. It also gives more granular control
+in case of multiple nested loops so as to break out of, let&#x27;s say 2 inner loops instead of only, say only, the innermost loop,
+which is the case with &lt;code&gt;break.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h3&gt;
+&lt;p&gt;So then, should you use &lt;code&gt;goto&lt;&#x2F;code&gt; or not? Well, it depends, actually. If you are using a higher-level programming language than C, the chances
+are that you might never need to think about it, there would be better structured programming constructs offered by your language.
+But then there are languages like lisp that rely heavily on &lt;code&gt;goto&lt;&#x2F;code&gt;s. 
+If you are using C, then it gets difficult to gauge the feasibility and the effect of using &lt;code&gt;goto&lt;&#x2F;code&gt; such that it improves the overall
+quality and readability of the code, but not so much that it results in spaghetti code.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“as a full professor with tenure, I don&#x27;t have to worry about being fired when I use goto statements.” — Donald Knuth :-) &lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+    </entry>
+</feed>
