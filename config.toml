@@ -9,7 +9,7 @@ build_search_index = true
 
 title="Manank's blog"
 
-generate_feed = true
+generate_feeds = true
 
 theme="DeepThought"
 taxonomies = [

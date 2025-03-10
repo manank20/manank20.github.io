@@ -1,7 +1,6 @@
 +++
 title = "Manank Patel"
 description = "Software Engineer @ Arista Networks"
-date = 2023-02-26
 +++
 
 ## About me

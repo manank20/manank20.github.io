@@ -2,3 +2,4 @@ test.md
 .direnv/
 .DS_Store
 tags
+zola
