@@ -9,7 +9,7 @@ build_search_index = true
 
 title="Manank's blog"
 
-generate_feeds = true
+generate_feeds = false
 
 theme="DeepThought"
 taxonomies = [
@@ -59,8 +59,6 @@ email="manank@manank.in"
 linkedin="manank20"
 github="manank20"
 gitlab="manank20"
-twitter="manank_p"
-reddit="manank_p"
 instagram="manank_p"
 mastodon_username="manank"
 mastodon_server="discuss.systems"
