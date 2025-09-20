@@ -4,10 +4,8 @@ description = "Software Engineer @ Arista Networks"
 +++
 
 ## About me
-I'm Manank, currently working as a Software Engineer at [Arista Networks](https://www.arista.com/en/). I love working with code that gets down to the basics. I mostly use C, Rust and bash for my day-to-day stuff. And I'm into Linux, especially messing around with the kernel. Areas of interest 
-include Operating Systems, Filesystems, Distributed Systems, Assembly, Digital Forensics, Reverse engineering etc.
-Outside work and coding, I enjoy riding motorcycles. I own a Himalayan 450(Built for all roads, Built for no roads😉), and hitting the road for weekend breakfast rides or trails on it is my favorite way to unwind.
-When I'm not doing that or working, I like reading books, and Photography, I have DJI Action 2 and Nikon D5300, a kit lens and 70-300 zoom lens. 
-I like snapping pictures of landscapes or just quick moments that catch my eye.
+
+I'm Manank, a Software Engineer at [Arista Networks](https://www.arista.com/en/) in Pune, originally from Ahmedabad. My interests lie at the intersection of systems programming, compiler technology, and operating systems. I enjoy working close to the hardware—primarily using C/C++, Rust —and often dive into assembly, kernel internals, and performance optimization. I actively follow Linux kernel developments and have a strong interest in the history and evolution of computing, from Unix and C to modern systems. Recently, I’ve been particularly drawn to Rust, comparing it with C in areas such as runtime efficiency, memory footprint, and developer productivity.
 
 
+When I’m not exploring systems and code, I like motorcycling—I ride a Royal Enfield Himalayan 450, perfect for both roads and trails. Weekend rides are my favorite way to reset. I also enjoy photography with my Nikon D5300 and DJI Action 2, especially landscapes and spontaneous moments, and I often spend downtime reading books.
