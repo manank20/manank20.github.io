@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+<head>
+ 
+{% block meta_links %}
+<meta property="og:url" content="{{config.base_url | safe}}/{{current_path | safe}}" />
+{% endblock meta_link %}
+
+</head>
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="has-text-centered">
+      <h1 class="title is-2">{{ section.title }}</h1>
+      <p class="subtitle is-4">{{ section.description }}</p>
+      {% if config.extra.author.avatar %}
+      <figure class="image is-flex is-justify-content-center is-align-items-center">
+        <img class="is-rounded" src="{{ config.extra.author.avatar }}" style="max-width: 192px" />
+      </figure>
+      {% endif %}
+      {{ macros:: social_links( social_config=config.extra.social) }}
+    </div>
+
+    <div class="content">
+      {{ section.content | safe }}
+    </div>
+
+    <div class="content mt-6">
+      <h2>Featured post</h2>
+      <article class="box">
+        <h3 class="title is-4 mb-2">
+          <a href="/blog/goto-statement/">The "goto" statement</a>
+        </h3>
+        <p class="mb-3">A brief history of the goto construct in C programming.</p>
+        <a class="button is-link is-light" href="/blog/goto-statement/">Read post</a>
+      </article>
+    </div>
+  </div>
+</section>
+{% endblock %}
