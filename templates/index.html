@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set featured = get_page(path="blog/goto-statement/index.md") %}
+<section class="section">
+  <div class="container">
+    <div class="has-text-centered">
+      <h1 class="title is-2">{{ section.title }}</h1>
+      <p class="subtitle is-4">{{ section.description }}</p>
+      {% if config.extra.author.avatar %}
+      <figure class="image is-flex is-justify-content-center is-align-items-center">
+        <img class="is-rounded" src="{{ config.extra.author.avatar }}" style="max-width: 192px" />
+      </figure>
+      {% endif %}
+      {{ macros:: social_links( social_config=config.extra.social) }}
+    </div>
+
+    <div class="content">
+      {{ section.content | safe }}
+    </div>
+
+    {% if featured %}
+    <div class="content mt-6">
+      <h2>Featured post</h2>
+      <article class="box">
+        <h3 class="title is-4 mb-2">
+          <a href="{{ featured.permalink }}">{{ featured.title }}</a>
+        </h3>
+        {% if featured.description %}
+        <p class="mb-3">{{ featured.description }}</p>
+        {% endif %}
+        <a class="button is-link is-light" href="{{ featured.permalink }}">Read post</a>
+      </article>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
