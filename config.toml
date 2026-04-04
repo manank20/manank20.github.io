@@ -16,13 +16,12 @@ taxonomies = [
     { name = "categories", feed = true, paginate_by = 10 },
     { name = "tags", feed = true, paginate_by = 10 },
 ]
-[markdown]
-# Whether to do syntax highlighting
-highlighting = true
 
+[markdown]
 render_emoji = true
 
-
+[markdown.highlighting]
+theme = "github-dark"
 
 [extra]
 # Put all your custom variables here
