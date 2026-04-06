@@ -11,6 +11,7 @@ tags = ["Programming", "C", "History"]
 [extra]
 toc = true
 comments = true
+image = "/images/Edsger_Dijkstra.jpg"
 +++
 
 The goto statement has been controversial since the advent of programming languages. In this blog post, we will deep dive into the history and the origin of the
@@ -35,7 +36,7 @@ decided to dig deeper and find out more about this debate.
 Dijkstra published a relatively strong article against the use of goto in The Communications of the ACM 11, 3 (March 1968), [Go To Statement Considered Harmful](dij.pdf).
 
 <center>
-  <img src="/images/Edsger_Dijkstra.jpg" width=200 alt="goto"/>
+  <img src="/images/Edsger_Dijkstra.jpg" width=200 alt="Edsger Dijkstra"/>
 </center>
 
 > Edsger Dijkstra was a Dutch computer scientist who made significant contributions to the fields of algorithms, programming, and software engineering. His work on the Dijkstra algorithm, structured programming, and formal methods has had a lasting impact on the field. 

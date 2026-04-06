@@ -11,6 +11,7 @@ tags = ["Kernel", "Development", "Linux"]
 
 [extra]
 toc = true
+image = "/images/blog/kernel-workflow.svg"
 +++
 
 Testing the new compiled kernel on the machine you are currently using is a big no-no.

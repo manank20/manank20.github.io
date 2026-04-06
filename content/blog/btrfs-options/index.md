@@ -10,6 +10,7 @@ tags = ["Linux", "Filesystem", "Btrfs"]
 
 [extra]
 toc = true
+image = "/images/blog/btrfs-options.svg"
 +++
 
 Btrfs has emerged as a powerful contender in the Linux filesystem landscape, offering advanced features like snapshots, checksumming, and dynamic volume management. When properly configured, it can provide an optimal balance of performance, reliability, and space efficiency. This guide will help you understand the most appropriate mount options for different scenarios, whether you're using SSDs, HDDs, or setting up specialized partitions.
