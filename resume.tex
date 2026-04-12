@@ -1,0 +1,132 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+
+% Custom section formatting
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{5pt}
+
+% Custom commands
+\newcommand{\entry}[4]{
+    \noindent{\bf #1} \hfill {#2} \\
+    \noindent{#3} \hfill {#4} \\
+}
+
+\begin{document}
+\pagestyle{empty}
+% \documentclass[12pt,a4paper]{article}
+% Header
+\begin{center}
+{\huge\textbf{MANANK PATEL}}\\[4pt]
+\small
+\faEnvelope{} \href{mailto:contact@manank.in}{contact@manank.in} \quad
+\faPhone{} +91-8320541977 \quad
+\faLinkedin \href{https://www.linkedin.com/in/manank20/}{manank20} \quad
+\faGlobe \href{https://manank.in}{manank.in} \quad
+\faGithub{} \href{https://github.com/manank20}{github.com/manank20} 
+
+\end{center}
+
+\section{EDUCATION}
+
+\noindent\entry{Birla Institute of Technology and Science - Pilani, Goa Campus}{2020 - 2024}{B.E. Computer Science}{CGPA: 8.17/10.0}
+
+\vspace{-10pt}
+
+\section{PROFESSIONAL EXPERIENCE}
+\noindent\entry{Software Engineer}{July 2024 - Present}
+{Arista Networks, Pune, India}{}
+\vspace{-10pt}
+\begin{itemize}[leftmargin=20pt, nosep]
+    % \item Working on new architecture with services based on Aeris, Arista’s internal Custom datastore cluster, with HBase backend, ensuring secure and highly scalable product.
+    \item Architecting and developing distributed, scalable services leveraging Aeris (Arista’s internal custom datastore) with an HBase backend, focusing on high availability, data consistency, and security
+    \item Led initiatives to improve system stability and performance by employing advanced observability and profiling tools such as eBPF, gdb, and core dump analysis, directly contributing to reduced downtime and enhanced reliability for large-scale deployments
+    % \item Worked on overall stability and performance optimization using tools like eBPF, and debugging using gdb, core dump analysis etc
+    \item Designed, implemented, and shipped customer-centric features in a fast-paced environment, taking ownership of the full software development lifecycle—including requirements gathering, design, development, testing, and deployment
+    % \item Built and shipped fast paced, customer first features, owned the entire lifecycle, including the development and testing.
+\end{itemize}
+
+\noindent\entry{Software Engineering Intern}{Jan 2024 - June 2024}
+{Arista Networks, Pune, India}{}
+\vspace{-10pt}
+\begin{itemize}[leftmargin=20pt, nosep]
+    \item Optimized memory usage for cloud-managed WiFi services by refactoring database interactions, achieving a 6–8x reduction in memory footprint, which is critical for cost-effective, high-performance storage and compute services at cloud scale
+    \item Contributed to the design and execution of performance benchmarks, identifying and resolving bottlenecks in distributed systems
+    % \item Worked with wifi-cloud team on performance optimization and scaling, specifically reduced memory footprint of database by a factor of 6-8x
+\end{itemize}
+
+\noindent\entry{Software Engineering Intern}{May 2023 - July 2023}
+{Arista Networks, Pune, India}{}
+\vspace{-10pt}
+\begin{itemize}[leftmargin=20pt, nosep]
+    \item Played a key role in migrating production infrastructure from CentOS to AlmaLinux, ensuring compatibility, security, and maintainability for cloud-native environments.
+    \item Drove the containerization of legacy monolithic applications, enabling microservices adoption and streamlined deployment pipelines using Docker and Kubernetes
+    % \item Worked with wifi-cloud team on infrastructure migration from CentOS to AlmaLinux
+    % \item Contributed to containerization of legacy monolithic products
+\end{itemize}
+
+\noindent\entry{GSoC Contributor}{May 2023 - Aug 2023}
+{OSPO UC Santa Cruz}{Remote}
+\vspace{-10pt}
+\begin{itemize}[leftmargin=20pt, nosep]
+    % \item Implemented iouring based communication backend for network-based key-value store to leverage Linux’s asynchronous I/O capabilities.
+    \item Developed an io\_uring-based communication backend for a networked key-value store, leveraging Linux asynchronous I/O to maximize throughput and minimize latency
+    \item Enhanced buffer management with shared ring buffers and direct packet queuing, significantly reducing memory copies and boosting overall system efficiency.
+    % \item Optimized buffer management using shared ring buffers and direct packet queuing, reducing memory copies.
+\end{itemize}
+
+\section{RESEARCH EXPERIENCE}
+\noindent\entry{Undergraduate Research Student}{May 2022 - Dec 2023}
+{DaSH Lab, CSIS, BITS Goa}{}
+\vspace{-10pt}
+\begin{itemize}[leftmargin=20pt, nosep]
+    % \item Researched iouring applications in reducing latency for data management systems
+    % \item Analyzed and benchmarked IO performance using tools like bpf, perf, flame graphs
+    % \item Studied distributed systems concepts including GFS, Hadoop, Message queues like apache kafka, rabbitMQ and consensus algorithms like Raft and paxos
+    \item Researched and benchmarked applications of Linux io\_uring for reducing latency in data management systems, leveraging tools like eBPF, perf, and flame graphs to analyze and optimize IO performance.
+    \item Studied and implemented distributed systems concepts, including consensus algorithms (Raft, Paxos), message queues (Kafka, RabbitMQ), and large-scale file systems (GFS, Hadoop), providing a strong foundation for cloud storage engineering.
+\end{itemize}
+
+\section{TECHNICAL SKILLS}
+% \noindent\textbf{Areas of Expertise:} Versatile experience, high-level microservices, Docker, k8s using Golang etc. and low-level programming in C and Rust, for core Computer Science Engineering. Interests also include Digital Forensics, Reverse Engineering etc.\\
+% \noindent\textbf{Programming Languages:} C, Rust, Assembly, Python, Go, Java, Bash\\
+% \noindent\textbf{Core Computer Science:} multi-threading, synchronization, debugging using GDB, performance profiling using eBPF, Flamegraphs, perf etc.\\
+% \noindent\textbf{Distributed Systems:} Research experience in distributed system and concepts like Brewer's Theorem, consensus algorithms, networking and scalability.   \\
+% % \noindent\textbf{Systems:} Linux kernel development, Driver development, Low-level programming in C\\
+% \noindent\textbf{Tools \& Technologies:} Git, AWS, GCP, Make, Docker, Databases, Wireshark, OpenVPN, GDB, IDA, Ghidra, eBPF, kvm, etc\\
+\noindent\textbf{Low-level systems:} C (advanced, memory management, concurrency, performance optimization, performance tuning), Rust (systems programming, async/concurrency, memory safety)\\
+\noindent\textbf{Microservices \& Cloud:} Go (Golang) cloud-native microservices, Docker/Kubernetes integration.\\
+\noindent\textbf{Areas Of Expertise:} Systems programming, distributed systems, networking, and performance-critical backend development. Microservices architecture, containerization (Docker, Kubernetes), cloud infrastructure (AWS, Azure). Debugging and profiling (gdb, eBPF, perf, flame graphs, core dump analysis)\\
+\noindent\textbf{Distributed Systems:} Design and implementation of distributed systems (consensus algorithms, CAP theorem, scalability, high availability). Experience with HBase, cloud storage, and hybrid cloud environments. Research and hands-on work with message queues (Kafka, RabbitMQ), large-scale file systems (GFS, Hadoop)\\
+\noindent\textbf{Tools \& Technologies:} Git, Docker, Kubernetes, AWS, GCP, Wireshark, OpenVPN, GDB, eBPF, IDA, Ghidra, KVM, Database management (SQL, NoSQL).
+
+% \section{SELECTED PROJECTS}
+% \noindent\entry{Mandelbrot Set Plotter}{}{}{}
+% \vspace{-20pt}
+% \begin{itemize}[leftmargin=20pt, nosep]
+%     \item Developed multi-threaded Rust program using crossbeam and rayon for plotting Mandelbrot set
+%     \item Implemented complex number mapping and image processing capabilities
+% \end{itemize}
+% \vspace{3pt}
+% \noindent\entry{NES Emulator}{}{}{}
+% \vspace{-20pt}
+% \begin{itemize}[leftmargin=20pt, nosep]
+%     \item Built Nintendo Entertainment System emulator in Rust implementing 6502 instruction set
+%     \item Developed complete addressing modes and bus architecture
+% \end{itemize}
+% \newpage
+% \section{LEADERSHIP}
+% \noindent\entry{Chief Coordinator}{2022 - 2023}
+% {Department of Photography, BITS Goa}{}
+% \vspace{-10pt}
+% \begin{itemize}[leftmargin=20pt, nosep]
+%     \item Lead team of seven coordinators managing photography coverage for university events
+%     \item Responsible for production of aftermovies for three student-run festivals
+% \end{itemize}
+
+\end{document}
