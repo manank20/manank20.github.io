@@ -3,3 +3,4 @@ test.md
 .DS_Store
 tags
 zola
+build/
