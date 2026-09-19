@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "deepthought": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1681035730,
-        "narHash": "sha256-dzhfGmhuNCbloqknM7lVnFbNYmf2/ue7az6DQok44yM=",
-        "owner": "RatanShreshtha",
-        "repo": "DeepThought",
-        "rev": "430c1d5085dd6bea4cd6bd2d55003db67ba6bea0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "RatanShreshtha",
-        "repo": "DeepThought",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -31,21 +15,6 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "nix-filter": {
-      "locked": {
-        "lastModified": 1694857738,
-        "narHash": "sha256-bxxNyLHjhu0N8T3REINXQ2ZkJco0ABFPn6PIe2QUfqo=",
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "rev": "41fd48e00c22b4ced525af521ead8792402de0ea",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "nix-filter",
         "type": "github"
       }
     },
@@ -67,9 +36,7 @@
     },
     "root": {
       "inputs": {
-        "deepthought": "deepthought",
         "flake-utils": "flake-utils",
-        "nix-filter": "nix-filter",
         "nixpkgs": "nixpkgs"
       }
     },
