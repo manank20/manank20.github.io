@@ -1,7 +1,7 @@
 test.md
 .direnv/
 .DS_Store
-tags
+/tags
 zola
 build/
 public/

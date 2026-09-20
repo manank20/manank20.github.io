@@ -1,8 +1,8 @@
 # The URL the site will be built for
 base_url = "https://www.manank.in"
 
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
+# The reusable theme ships its static CSS; no Sass override is needed here.
+compile_sass = false
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
@@ -20,11 +20,13 @@ taxonomies = [
 render_emoji = true
 
 [markdown.highlighting]
-theme = "github-dark"
+theme = "github-dark-accessible"
+extra_themes = ["themes/DeepThought/highlighting/github-dark-accessible.json"]
 
 
 [extra]
 # Put all your custom variables here
+featured_page = "blog/goto-statement/index.md"
 navbar_items = [
 { code = "en", nav_items = [
     { url = "$BASE_URL/", name = "Home" },
@@ -41,6 +43,10 @@ google = "G-0083EZQFRX"
 
 [extra.commenting]
 disqus = "manank"
+
+[extra.policy]
+label = "AI Policy"
+url = "$BASE_URL/ai-policy/"
 
 [extra.favicon]
 favicon_16x16 = "/icons/favicon-16x16.png"
