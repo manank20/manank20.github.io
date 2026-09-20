@@ -9,22 +9,40 @@ with Zola 0.22 or earlier. Install the matching release from
 
 ```sh
 git submodule update --init --recursive  # on a fresh checkout only
-zola --version                           # zola 0.23.6
-zola serve
+ZOLA="${ZOLA:-zola}"
+"$ZOLA" --version                       # zola 0.23.6
+"$ZOLA" serve
 # Include the existing unpublished kernel-workflow post:
-zola serve --drafts
+"$ZOLA" serve --drafts
 ```
 
-The theme is maintained in the separate repository at `themes/DeepThought`.
-Site-specific overrides remain in `templates/`. Commit theme changes first and
-then record the resulting submodule commit in this repository.
+The reusable templates, CSS, JavaScript, rich-content components, highlighting
+data, generic tests, and standalone demo live in the separate
+`themes/DeepThought` submodule. This site keeps its content, icons, documents,
+and site-specific values in `config.toml`; the install identifier remains
+`DeepThought` even though the theme displays itself as **DeepThought v2**.
 
 ## Verification
 
 ```sh
-zola build
-zola check --drafts --skip-external-links
-zola check  # also checks third-party URLs; may fail on blocked/removed links
+ZOLA="${ZOLA:-zola}"
+"$ZOLA" build --force --output-dir /tmp/manank-parent
+"$ZOLA" build --drafts --force --output-dir /tmp/manank-parent-drafts
+"$ZOLA" check --drafts --skip-external-links
+"$ZOLA" check  # also checks third-party URLs; may fail on blocked/removed links
+PYTHONDONTWRITEBYTECODE=1 ZOLA="$ZOLA" SITE_OUTPUT=/tmp/manank-parent \
+  python3 -m unittest discover -s tests -v
+```
+
+For the extracted theme's standalone demo and browser checks:
+
+```sh
+cd themes/DeepThought
+"$ZOLA" build --force --output-dir /tmp/deepthought-v2-demo
+"$ZOLA" build --drafts --force --output-dir /tmp/deepthought-v2-demo-drafts
+PYTHONDONTWRITEBYTECODE=1 ZOLA="$ZOLA" python3 -m unittest discover -s tests -v
+NODE_PATH="$(npm root -g)" PORT=8865 \
+  node tests/browser_regressions.js /tmp/deepthought-v2-demo
 ```
 
 ## Nix
