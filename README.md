@@ -30,8 +30,6 @@ ZOLA="${ZOLA:-zola}"
 "$ZOLA" build --drafts --force --output-dir /tmp/manank-parent-drafts
 "$ZOLA" check --drafts --skip-external-links
 "$ZOLA" check  # also checks third-party URLs; may fail on blocked/removed links
-PYTHONDONTWRITEBYTECODE=1 ZOLA="$ZOLA" SITE_OUTPUT=/tmp/manank-parent \
-  python3 -m unittest discover -s tests -v
 ```
 
 For the extracted theme's standalone demo and browser checks:
