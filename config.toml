@@ -34,7 +34,6 @@ navbar_items = [
         { url = "$BASE_URL/Manank_CV.pdf", name = "CV" },
         { url = "$BASE_URL/tags", name = "Tags" },
         { url = "$BASE_URL/categories", name = "Categories" },
-        { url = "$BASE_URL/ai-policy/", name = "AI Policy" },
 ] },
 ]
 
@@ -43,10 +42,6 @@ google = "G-0083EZQFRX"
 
 [extra.commenting]
 disqus = "manank"
-
-[extra.policy]
-label = "AI Policy"
-url = "$BASE_URL/ai-policy/"
 
 [extra.favicon]
 favicon_16x16 = "/icons/favicon-16x16.png"
