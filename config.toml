@@ -9,7 +9,10 @@ build_search_index = true
 
 title="Manank's blog"
 
-generate_feeds = false
+generate_feeds = true
+# Zola 0.23: feed_filenames (plural). Built-in templates exist for both.
+# The theme links the first filename from the footer when feeds are enabled.
+feed_filenames = ["atom.xml", "rss.xml"]
 
 theme="DeepThought"
 taxonomies = [
